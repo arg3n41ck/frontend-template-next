@@ -1,0 +1,26 @@
+# Ruflo Next.js Template
+
+Minimal server-first Next.js App Router starter without prebuilt product pages.
+
+## Stack
+
+Next.js 16, React 19, TypeScript, Tailwind CSS v4 and shadcn/ui (Radix + Lucide).
+
+## Requirements
+
+Node.js 22 and pnpm 11 through Corepack.
+
+## Start
+
+```bash
+pnpm install
+pnpm dev
+```
+
+## Verify
+
+```bash
+pnpm verify
+```
+
+Prefer Server Components. Add `"use client"` only at the smallest interactive boundary. Add shadcn primitives with `pnpm dlx shadcn@latest add <component>`.
