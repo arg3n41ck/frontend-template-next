@@ -8,7 +8,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ruflo Next Template",
+  title: "Frontend Next Template",
   description: "Clean Next.js and shadcn/ui project starter",
 };
 

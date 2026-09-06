@@ -1,4 +1,4 @@
-# Ruflo Next.js Template
+# Frontend Next.js Template
 
 Minimal server-first Next.js App Router starter without prebuilt product pages.
 
@@ -24,3 +24,7 @@ pnpm verify
 ```
 
 Prefer Server Components. Add `"use client"` only at the smallest interactive boundary. Add shadcn primitives with `pnpm dlx shadcn@latest add <component>`.
+
+## AI-assisted work
+
+Start with `AGENTS.md`, then `docs/AI_SKILLS.md` and `docs/ARCHITECTURE.md`. Skills are included and loaded on demand, not installed as executable background agents. No framework migration or extra dependencies are required to use this starter.
