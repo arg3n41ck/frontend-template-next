@@ -1,6 +1,6 @@
 {
   "name": "frontend-template-next",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,13 +8,15 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "verify": "pnpm lint && pnpm typecheck && pnpm build"
+    "verify": "pnpm lint && pnpm test:query && pnpm typecheck && pnpm build",
+    "test:query": "node --experimental-strip-types --test scripts/query-state.test.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.33.0",
     "next": "16.3.2",
+    "nuqs": "2.10.1",
     "radix-ui": "^1.6.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -28,9 +30,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
+    "shadcn": "^4.19.0",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "shadcn": "^4.19.0"
+    "typescript": "^5"
   },
   "packageManager": "pnpm@11.21.0"
 }
