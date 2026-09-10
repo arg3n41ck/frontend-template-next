@@ -23,7 +23,29 @@ pnpm dev
 pnpm verify
 ```
 
-Предпочитайте Server Components. Добавляйте `"use client"` только на минимальной интерактивной границе. Примитивы shadcn добавляются командой `pnpm dlx shadcn@latest add <component>`.
+Предпочитайте Server Components. Добавляйте `"use client"` только на минимальной интерактивной границе.
+
+## Структура frontend
+
+```text
+src/app/                       тонкие App Router routes/layouts и providers
+src/modules/                   доменные модули и экраны
+src/shared/ui/shadcn/          примитивы shadcn
+src/shared/hooks/              общие hooks
+src/shared/libs/               общие утилиты
+src/shared/config/styles/      theme tokens и глобальный CSS
+```
+
+## shadcn/ui
+
+Часто используемые примитивы уже находятся в `src/shared/ui/shadcn`. Остальные добавляйте по потребности через закреплённый CLI:
+
+```bash
+pnpm ui:check dialog
+pnpm ui:add dialog
+```
+
+Палитра редактируется только в `src/shared/config/styles/palette.css`; shadcn-компоненты автоматически получают её через semantic tokens.
 
 ## Работа с ИИ
 
@@ -49,4 +71,4 @@ node .ai/context.mjs --check
 
 ## Подготовка к выпуску
 
-Актуальные проверки и ограничения — [VERIFICATION_STATUS](docs/VERIFICATION_STATUS.md). Локальные env/runtime/test-артефакты исключены из Git; `.env.example` разрешён. Версия шаблона: **v0.3.0**.
+Актуальные проверки и ограничения — [VERIFICATION_STATUS](docs/VERIFICATION_STATUS.md). Локальные env/runtime/test-артефакты исключены из Git; `.env.example` разрешён. Версия шаблона: **v0.4.0**.

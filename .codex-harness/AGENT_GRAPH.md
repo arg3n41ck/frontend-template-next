@@ -8,8 +8,8 @@
 
 ## Source map
 
-- `src/app` routes/layouts; `src/components/ui` shadcn source; `src/lib` shared utilities.
-- `components.json`: shadcn registry and alias configuration.
+- `src/app` contains thin App Router routes/layouts/providers; `src/modules/Home` owns the demo screen; `src/shared/ui/shadcn` owns registry primitives; shared hooks/libs/styles live under `src/shared/*`.
+- `components.json`: shadcn registry and alias configuration. `src/shared/config/styles/palette.css` owns primitive colors and light/dark semantic mappings; `global.css` exposes them to Tailwind.
 - `.ai/skills`: canonical project-local agent skills.
 - `docs/AI_SKILLS.md`: skill selection and overlap notes.
 - `docs/DESIGN_SYSTEM.md`: UI ownership and token rules.
@@ -48,7 +48,7 @@ Codebase Memory MCP was refreshed during kit verification. Graph availability re
 - `.ai/skills/project-documentation-wiki`: business knowledge in `.wiki/`; read its index before substantive tasks.
 - Canonical skills have portable forwarders for supported agent clients.
 
-Installed workflow inventory and task triggers are listed in `docs/AI_SKILLS.md` and `.ai/workflows.json`. No application architecture or runtime dependency changed.
+Installed workflow inventory and task triggers are listed in `docs/AI_SKILLS.md` and `.ai/workflows.json`. The frontend architecture follows the canonical app/modules/shared contract; verify source paths after future moves.
 
 ## Context routing
 
@@ -58,4 +58,4 @@ Installed workflow inventory and task triggers are listed in `docs/AI_SKILLS.md`
 
 ## URL-state extension
 
-`docs/URL_STATE.md` owns state/filter policy. `docs/AI_SKILLS.md` and `.ai/workflows.json` index focused skills; hub kit is the shared authoring source, project copies stay standalone. `src/lib/search-params.ts` defines URL parsers/loader/serializer; `src/hooks/use-list-search.ts` uses nuqs; main/root layout supplies adapter; `scripts/query-state.test.mjs` tests normalization and serialization.
+`docs/URL_STATE.md` owns state/filter policy. `docs/AI_SKILLS.md` and `.ai/workflows.json` index focused skills; hub kit is the shared authoring source, project copies stay standalone. `src/shared/libs/search-params.ts` defines URL parsers/loader/serializer; `src/shared/hooks/use-list-search.ts` uses nuqs; main/root layout supplies adapter; `scripts/query-state.test.mjs` tests normalization and serialization.

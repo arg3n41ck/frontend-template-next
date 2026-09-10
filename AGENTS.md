@@ -33,14 +33,14 @@ For new product work, read `docs/PROJECT_BRIEF.md` if present and use `project-k
 ## Architecture
 
 - Next.js App Router, React 19, TypeScript, Tailwind CSS v4, shadcn/ui.
-- `src/app` routes/layouts; `src/components/ui` shadcn source; `src/lib` shared utilities.
+- `src/app` thin App Router routes/layouts and providers; `src/modules` domain UI/behavior; `src/shared/ui/shadcn` registry primitives; other reusable code under `src/shared/*`.
 - Default to Server Components. Keep `use client` at the narrowest interactive boundary. Use Route Handlers only for real server/BFF responsibilities.
 
 ## UI/UX
 
 - shadcn/ui source is owned by this repository; add primitives with the shadcn CLI instead of hand-copying registry code.
 - Compose product components outside the primitive folder. Do not put business logic into shadcn primitives.
-- Use semantic theme tokens; avoid hardcoded colors and duplicate one-off UI primitives.
+- `src/shared/config/styles/palette.css` is the color source of truth. Map palette values to semantic tokens there; product and shadcn code must use semantic classes, never raw Tailwind colors.
 - Use Lucide icons for standard interface symbols. Keep focus, keyboard behavior, loading, empty and error states accessible.
 - For UI work, consult `ui-ux-pro-max`, `design-system-steward`, `frontend-design`, and `frontend-error-ux` as needed.
 
